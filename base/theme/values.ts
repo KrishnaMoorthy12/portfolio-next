@@ -1,7 +1,4 @@
-import { ReactNode } from 'react';
-import { ThemeProvider } from 'styled-components';
-
-const themeValues: ITheme = {
+export const themeValues: ITheme = {
   colors: {
     primary: {
       light: '#9f55ff',
@@ -31,19 +28,6 @@ const themeValues: ITheme = {
       window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
   },
 };
-
-export function ThemeEngine({ children }: ThemeEngineProps) {
-  return <ThemeProvider theme={themeValues}>{children}</ThemeProvider>;
-}
-
-ThemeEngine.getSystemColorScheme = () => themeValues.util.getSystemColorScheme;
-
-ThemeEngine.getRawValues = () => {
-  const { util, ...values } = themeValues;
-  return { ...values };
-};
-
-type ThemeEngineProps = { children: ReactNode };
 
 export interface ITheme {
   colors: {
