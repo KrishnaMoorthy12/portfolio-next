@@ -19,6 +19,10 @@ export function MetaInformation() {
       <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
       <meta name='language' content={strings.language} />
       <meta name='author' content={strings.name} />
+
+      <link rel='manifest' href='/assets/manifest.json' />
+      <link rel='apple-touch-icon' href='/assets/apple-icon.png' />
+      <link rel='icon' href='/assets/favicon.ico' />
     </Head>
   );
 }
