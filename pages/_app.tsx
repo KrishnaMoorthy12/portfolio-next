@@ -1,11 +1,14 @@
 import type { AppProps } from 'next/app';
-import { MetaInformation } from '../components/MetaInformation';
+import { GlobalStyles, MetaInformation, ThemeEngine } from '../base';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <MetaInformation />
-      <Component {...pageProps} />
+      <ThemeEngine>
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </ThemeEngine>
     </>
   );
 }
