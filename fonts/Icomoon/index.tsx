@@ -1,0 +1,13 @@
+import { createGlobalStyle } from 'styled-components';
+
+export const Icomoon = createGlobalStyle`
+  @font-face {
+    font-family: 'Icomoon';
+    src: url('./icomoon.eot?e4ej6o');
+    src: url('./icomoon.eot?e4ej6o#iefix') format('embedded-opentype'), url('./icomoon.ttf?e4ej6o') format('truetype'),
+      url('./icomoon.woff?e4ej6o') format('woff'), url('./icomoon.svg?e4ej6o#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+`;

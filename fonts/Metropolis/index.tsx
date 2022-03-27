@@ -1,0 +1,19 @@
+import { createGlobalStyle } from 'styled-components';
+
+export const Metropolis = createGlobalStyle`
+  @font-face {
+    font-family: 'Metropolis';
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Regular'), url('./Metropolis-Light.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Metropolis';
+    font-display: swap;
+    font-style: normal;
+    font-weight: bold;
+    src: local('Metropolis Bold'), url('./Metropolis-Bold.woff') format('woff');
+  }
+`;

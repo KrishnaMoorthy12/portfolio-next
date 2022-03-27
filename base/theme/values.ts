@@ -5,6 +5,7 @@ export const themeValues: ITheme = {
       main: '#8b31ff',
       dark: '#7000ff',
     },
+    pureWhite: '#000000',
     white: '#f0f0f0',
     black: '#000000',
     slate: {
@@ -20,7 +21,12 @@ export const themeValues: ITheme = {
     tomato: '#cf0000',
     emerald: '#00ac56',
   },
-  fonts: {},
+  fonts: {
+    display: ['Metropolis', 'sans-serif'].join(', '),
+    mono: ['JetBrains Mono', 'Fira Code', 'monospace'].join(', '),
+    icon: ['Icomoon', 'sans-serif'].join(', '),
+    logo: ['Logo', 'sans-serif'].join(', '),
+  },
   sizes: {},
 
   util: {
@@ -36,6 +42,7 @@ export interface ITheme {
       main: string;
       dark: string;
     };
+    pureWhite: string;
     white: string;
     black: string;
     slate: {
@@ -45,13 +52,18 @@ export interface ITheme {
       dark: string;
       darker: string;
       darkest: string;
-      extraDark: string;
       deepDark: string;
+      extraDark: string;
     };
     tomato: string;
     emerald: string;
   };
-  fonts: {};
+  fonts: {
+    display: string;
+    mono: string;
+    icon: string;
+    logo: string;
+  };
   sizes: {};
   util: {
     getSystemColorScheme: () => ColorScheme;

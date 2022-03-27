@@ -9,12 +9,12 @@ export const GlobalStyles = createGlobalStyle`
   box-sizing: inherit;
 
   -webkit-touch-callout: none;
-  -webkit-tap-highlight-color: rgba(${props => props.theme.colors.primary.dark}, 0.05);
+  -webkit-tap-highlight-color: rgba(${({ theme }) => theme.colors.primary.dark}, 0.05);
 }
 
 html {
   font-size: 62.5%;
-  font-family: $font-default;
+  font-family: ${({ theme }) => theme.fonts.display};
   scroll-behavior: smooth;
   // overflow: overlay;
 }
@@ -22,21 +22,21 @@ html {
 body {
   box-sizing: border-box;
   overflow-x: hidden;
-  background-color: $color-white;
-  color: $color-slate-dark-4;
+  background-color: ${({ theme }) => theme.colors.pureWhite};
+  color: ${({ theme }) => theme.colors.slate.extraDark};
 
   @include theme(dark) {
-    background-color: $color-slate-dark-5;
-    color: $color-slate-light-1;
+    background-color: ${({ theme }) => theme.colors.slate.extraDark};
+    color: ${({ theme }) => theme.colors.pureWhite};
   }
 }
 
 ::selection {
-  background-color: $color-primary-dark;
-  color: $color-white;
+  background-color: ${({ theme }) => theme.colors.primary.dark};
+  color: ${({ theme }) => theme.colors.slate.lightest};
 
   @include theme(dark) {
-    background-color: $color-primary-main;
+    background-color: ${({ theme }) => theme.colors.primary.main};
   }
 }
 
@@ -49,14 +49,14 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba($color-primary-dark, 0.75);
+  background: rgba(${({ theme }) => theme.colors.primary.dark}, 0.75);
   opacity: 0.5;
   border-radius: 1rem;
   transition: all 0.2s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba($color-primary-dark, 1);
+  background: rgba(${({ theme }) => theme.colors.primary.dark}, 1);
   opacity: 1;
 }
 `;
