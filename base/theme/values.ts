@@ -45,6 +45,7 @@ export const themeValues: ITheme = {
       const touchMod = isTouchEnabled ? ', only screen and (hover: none)' : '';
       return `@media only screen and (${widthMod}: ${device}) ${touchMod}`;
     },
+    forTheme: (scheme: ColorScheme) => `@media (prefers-color-scheme: ${scheme})`,
   },
 };
 
@@ -87,8 +88,10 @@ export interface ITheme {
   };
   util: {
     getSystemColorScheme: () => ColorScheme;
-    getMQ: (device: keyof ITheme['breakpoints'], isTouchEnabled?: boolean) => string;
+    getMQ: (device: keyof ITheme['breakpoints'], isTouchEnabled?: boolean) => MediaQuery;
+    forTheme: (scheme: ColorScheme) => MediaQuery;
   };
 }
 
 export type ColorScheme = 'light' | 'dark';
+export type MediaQuery = string;
