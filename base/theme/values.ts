@@ -29,9 +29,22 @@ export const themeValues: ITheme = {
   },
   sizes: {},
 
+  breakpoints: {
+    phone: '37.5em',
+    'phone-large': '50em',
+    'tab-port': '56.25em',
+    'tab-lan': '75em',
+    desktop: '112.5em',
+  },
+
   util: {
     getSystemColorScheme: (): ColorScheme =>
       window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+    getMQ(device: keyof ITheme['breakpoints'], isTouchEnabled: boolean = false): string {
+      const widthMod = device === 'desktop' ? 'min-width' : 'max-width';
+      const touchMod = isTouchEnabled ? ', only screen and (hover: none)' : '';
+      return `@media only screen and (${widthMod}: ${device}) ${touchMod}`;
+    },
   },
 };
 
@@ -65,8 +78,16 @@ export interface ITheme {
     logo: string;
   };
   sizes: {};
+  breakpoints: {
+    phone: string;
+    'phone-large': string;
+    'tab-port': string;
+    'tab-lan': string;
+    desktop: string;
+  };
   util: {
     getSystemColorScheme: () => ColorScheme;
+    getMQ: (device: keyof ITheme['breakpoints'], isTouchEnabled?: boolean) => string;
   };
 }
 
