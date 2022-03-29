@@ -25,7 +25,7 @@ body {
   background-color: ${({ theme }) => theme.colors.pureWhite};
   color: ${({ theme }) => theme.colors.slate.extraDark};
 
-  @include theme(dark) {
+  @media (prefers-color-scheme: dark) {
     background-color: ${({ theme }) => theme.colors.slate.extraDark};
     color: ${({ theme }) => theme.colors.pureWhite};
   }
@@ -35,7 +35,7 @@ body {
   background-color: ${({ theme }) => theme.colors.primary.dark};
   color: ${({ theme }) => theme.colors.slate.lightest};
 
-  @include theme(dark) {
+  @media (prefers-color-scheme: dark) {
     background-color: ${({ theme }) => theme.colors.primary.main};
   }
 }

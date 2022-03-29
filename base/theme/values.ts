@@ -5,7 +5,7 @@ export const themeValues: ITheme = {
       main: '#8b31ff',
       dark: '#7000ff',
     },
-    pureWhite: '#000000',
+    pureWhite: '#ffffff',
     white: '#f0f0f0',
     black: '#000000',
     slate: {
