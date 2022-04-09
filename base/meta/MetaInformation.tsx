@@ -22,7 +22,7 @@ export function MetaInformation() {
 
       <link rel='manifest' href='/assets/manifest.json' />
       <link rel='apple-touch-icon' href='/assets/apple-icon.png' />
-      <link rel='icon' href='/assets/favicon.ico' />
+      <link rel='icon' href='/assets/favicon-32x32.png' />
     </Head>
   );
 }
