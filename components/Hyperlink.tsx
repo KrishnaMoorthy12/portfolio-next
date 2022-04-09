@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 
 export function HyperLink({ to, lone, children }: HyperlinkProps) {
